@@ -6,3 +6,8 @@ pypdf
 gradio
 langchain-community
 python-dotenv
+tiktoken
+ibm-watson-machine-learning
+sentence-transformers
+transformers
+huggingface-hub
