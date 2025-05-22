@@ -36,7 +36,7 @@ It was developed as part of the **LangChain + LLM Capstone Project** to simulate
 1. **Clone the project**
    ```bash
    git clone https://github.com/your-repo/langchain-qa-bot
-   cd langchain-qa-bot
+   cd llm-capstone-project
 2. Install dependencies
    pip install -r requirements.txt
    Run the QA bot interface
