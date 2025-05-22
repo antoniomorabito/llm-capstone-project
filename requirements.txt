@@ -4,3 +4,4 @@ chromadb
 faiss-cpu
 pypdf
 gradio
+langchain-community
