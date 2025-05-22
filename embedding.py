@@ -1,21 +1,27 @@
-# === Embedding with Watsonx-Compatible Setup ===
+# === embedding.py ===
 
-# from langchain.embeddings import WatsonxEmbeddings  # Uncomment if SDK installed
+from dotenv import load_dotenv
+import os
+
+load_dotenv()  # Load from .env file
+
+# === Use Watsonx if available ===
+# from langchain.embeddings import WatsonxEmbeddings
 # embeddings = WatsonxEmbeddings(
 #     model_id="watsonx/embedding-model-id",
-#     watsonx_api_key="your_watsonx_api_key"
+#     watsonx_api_key=os.getenv("WATSONX_API_KEY")
 # )
 
-# === Dummy fallback with OpenAI ===
+# === Fallback to OpenAI ===
 from langchain.embeddings import OpenAIEmbeddings
-import os
-os.environ["OPENAI_API_KEY"] = "your_openai_key"
-embeddings = OpenAIEmbeddings()
+
+embedding_function = OpenAIEmbeddings(
+    openai_api_key=os.getenv("OPENAI_API_KEY")
+)
 
 # Query to embed
 query = "How are you?"
-embedding = embeddings.embed_query(query)
+embedding = embedding_function.embed_query(query)
 
-# Display first 5 numbers
 print("First 5 values of embedding:")
 print(embedding[:5])
